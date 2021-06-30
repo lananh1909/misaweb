@@ -14,15 +14,9 @@
     <link rel="stylesheet" href="../Resource/font/fontawesome-5.15.1/css/all.min.css">
   </head>
   <body>
-    <div class="container-fluid">
+    <div class="main">
         <div class="row">
-            <div class="left-bar">
-              <div class="row top-left-menu">
-                <div class="toggle-icon">
-                  <img height="24px" src="../Resource/img/toggle.png" alt="">
-                </div>
-                <img height="24px" src="../Resource/img/cukcuk-logo.png" alt="">
-              </div>
+            <div class="left-bar">              
               <ul class="list-menu">
                 <li class="menu-item row active">
                   <img class="icon" height="20px" src="../Resource/icon/dashboard.png" alt="">
@@ -49,27 +43,35 @@
                   <div class="text-menu">Thiết lập hệ thống</div>
                 </li>                
               </ul>
+              <div class="buttonMinisize"><i class="fas fa-chevron-left"></i></div>              
+            </div>
+            <div class="top-right row">
+              <div class="row top-left-menu">
+                <div class="toggle-icon">
+                  <img height="24px" src="../Resource/img/toggle.png" alt="">
+                </div>
+                <img height="24px" src="../Resource/img/cukcuk-logo.png" alt="">
+              </div>
+              <div class="left">                  
+                <select name="res" id="res" class="title2">
+                  <option value="nhbd" >Nhà hàng Biển Đông</option>
+                  <option value="nhbt">Nhà hàng Biển Tây</option>
+                </select>
+              </div>                
+              <div class="user-top d-inline">
+                <i class="far fa-bell icon" style="padding-right: 16px;"></i>
+                <img height="24px" style="margin-right: 16px;" src="../Resource/icon/avatar-default.png" alt="" class="avatar">
+                <span class="user" style="margin-right: 16px;">Nguyễn Lan Anh</span>
+                <img src="../Resource/icon/option.png" alt="" style="margin-right: 16px;">
+              </div>
             </div>
             <div class="right-content">
-              <div class="top-right row">
-                <div class="left">
-                  <select name="res" id="res" class="title2">
-                    <option value="nhbd" >Nhà hàng Biển Đông</option>
-                    <option value="nhbt">Nhà hàng Biển Tây</option>
-                  </select>
-                </div>                
-                <div class="user-top d-inline">
-                  <i class="far fa-bell icon" style="padding-right: 16px;"></i>
-                  <img height="24px" style="margin-right: 16px;" src="../Resource/icon/avatar-default.png" alt="" class="avatar">
-                  <span class="user" style="margin-right: 16px;">Nguyễn Lan Anh</span>
-                  <img src="../Resource/icon/option.png" alt="" style="margin-right: 16px;">
-                </div>
-              </div>
+              
               <div class="main-content">
                 <div class="row">
                   <div class="title">Danh sách nhân viên</div>
                   <div class="button" style="margin-left: auto;">
-                    <i class="fas fa-user-plus" style="padding-right: 10px;"></i>
+                    <i class="fas fa-user-plus"></i>
                     Thêm nhân viên
                   </div>
                 </div>   
@@ -95,7 +97,7 @@
                     <img src="../Resource/icon/refresh.png" alt="">
                   </div>
                 </div> 
-                <table class="table" style="margin-top: 15px;">
+                <table class="table" style="margin-top: 15px;" id="mytable">
                   <thead>
                     <tr>
                       <th scope="col">Mã nhân viên</th>
@@ -205,6 +207,170 @@
               </div>
             </div>
         </div>
+    </div>
+
+    <!-- modal xem chi tiet nhan vien -->
+    <div id="detail" class="mymodal">
+      <div class="my-modal-content">
+        <div class="my-modal-header">
+          <div>
+            <img src="../Resource/icon/x.svg" alt="" style="float: right;" id="closeBtn">
+          </div>          
+          <div class="title my-modal-title">Thông tin nhân viên</div>
+        </div>
+        <div class="row" style="align-items: flex-start;">
+          <div class="left-modal col-sm-2">
+            <img src="../Resource/img/default-avatar.jpg" alt="" class="modal-avatar">        
+            <p>(Vui lòng chọn ảnh có định dạng .jpg, .jpeg, .png, .gif.)</p>
+          </div>
+          <div class="right-modal col-sm-10">
+            <div class="title2 col main-label">A. THÔNG TIN CHUNG: <div class="border-bottom"></div></div>
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="maNV">Mã nhân viên (<span style="color: red;">*</span>)</label>
+                  <input type="text" name="maNV" id="maNV" class="form-control" placeholder="Mã nhân viên">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <div class="form-group">
+                    <label for="fullname">Họ và tên (<span style="color: red;">*</span>)</label>
+                    <input type="text" name="fullname" id="fullname" class="form-control" placeholder="Họ và tên">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="birthDate">Ngày sinh</label>
+                  <input type="date" name="birthDate" id="birthDate" class="form-control">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <div class="form-group">
+                    <label for="fullname">Giới tính</label>
+                    <select name="gender" id="gender" class="form-control">
+                      <option value="nam">Nam</option>
+                      <option value="Nữ">Nữ</option>
+                      <option value="Other">Khác</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="cmtnd">Số CMTND/ Căn cước (<span style="color: red;">*</span>)</label>
+                  <input type="number" name="cmtnd" id="cmtnd" class="form-control" placeholder="CNTND/ Căn cước">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <div class="form-group">
+                    <label for="ngaycap">Ngày cấp</label>
+                    <input type="date" name="ngaycap" id="ngaycap" class="form-control">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="noicap">Nơi cấp</label>
+                  <input type="text" name="noicap" id="noicap" class="form-control" placeholder="Nơi cấp">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="email">Email (<span style="color: red;">*</span>)</label>
+                  <input type="text" name="email" id="email" class="form-control" placeholder="Email">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <div class="form-group">
+                    <label for="phoneNum">Số điện thoại (<span style="color: red;">*</span>)</label>
+                    <input type="number" name="phoneNum" id="phoneNum" class="form-control" placeholder="Số điện thoại">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="title2 col main-label">B. THÔNG TIN CÔNG VIỆC:<div class="border-bottom"></div></div>
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="position">Vị trí</label>
+                  <select name="position" id="position" class="form-control">
+                    <option value="1">Giám đốc</option>
+                    <option value="2">Nhân viên kinh doanh</option>
+                    <option value="3">Lập trình viên</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <div class="form-group">
+                    <label for="department">Phòng ban</label>
+                    <select name="department" id="department" class="form-control">
+                      <option value="1">Phòng nhân sự</option>
+                      <option value="2">Phòng kinh doanh</option>
+                      <option value="3">Phòng hành chính</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="taxNumber">Mã số thuế cá nhân</label>
+                  <input type="number" name="taxNumber" id="taxNumber" class="form-control" placeholder="Mã số thuế cá nhân">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <div class="form-group">
+                    <label for="salary">Mức lương cơ bản</label>
+                    <input type="text" name="salary" id="salary" class="form-control" placeholder="Mức lương cơ bản">                    
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="joinDate">Ngày gia nhập công ty</label>
+                  <input type="date" name="joinDate" id="joinDate" class="form-control">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <div class="form-group">
+                    <label for="state">Tình trạng công việc</label>
+                    <select name="state" id="state" class="form-control">
+                      <option value="1">Đang làm việc</option>
+                      <option value="2">Đang học việc</option>
+                      <option value="3">Đã nghỉ việcs</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="my-modal-bottom">
+              <div class="cancel">Hủy</div>
+              <div class="button">
+                <i class="far fa-save"></i> Lưu
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>      
     </div>
 
     <!-- Optional JavaScript -->
