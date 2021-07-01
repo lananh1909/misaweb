@@ -90,11 +90,33 @@ document.addEventListener('DOMContentLoaded', function(){
         if(num == 0){
             obj.value = '';
         } else {
-            obj.value = num.toLocaleString().replaceAll(',', '.');
+            obj.value = num.toLocaleString('it-IT');
         }
     }
     var inputSalary = document.getElementById('salary');
     inputSalary.oninput = () => {
         updateTextView(inputSalary);
     }
+
+
+    //show clear button on keyup input
+    var listInput = Array.from(document.getElementsByClassName("search-box"));
+    listInput.forEach(item => {
+        var input = item.querySelector("input");
+        var clearBtn = item.querySelector(".clearBtn");
+        if(input && input.type == 'number'){
+            clearBtn.style.right = '25px';
+        }
+        if(input && (input.type == 'text' || input.type == 'number') && clearBtn){            
+            input.addEventListener("input", () => {            
+                clearBtn.style.display = 'block';
+                if(input.value == "")
+                    clearBtn.style.display = "none";
+            })
+            clearBtn.addEventListener("click", () => {
+                input.value = "";
+                clearBtn.style.display = "none";
+            })
+        }        
+    })
 }, false)

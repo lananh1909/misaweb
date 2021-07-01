@@ -16,6 +16,7 @@
   <body>
     <div class="main">
         <div class="row">
+            <!-- side bar -->
             <div class="left-bar">              
               <ul class="list-menu">
                 <li class="menu-item row active">
@@ -45,6 +46,7 @@
               </ul>
               <div class="buttonMinisize"><i class="fas fa-chevron-left"></i></div>              
             </div>
+            <!-- header  -->
             <div class="top-right row">
               <div class="row top-left-menu">
                 <div class="toggle-icon">
@@ -65,8 +67,8 @@
                 <img src="../Resource/icon/option.png" alt="" style="margin-right: 16px;">
               </div>
             </div>
-            <div class="right-content">
-              
+            <!-- main content  -->
+            <div class="right-content">              
               <div class="main-content">
                 <div class="row">
                   <div class="title">Danh sách nhân viên</div>
@@ -75,10 +77,12 @@
                     Thêm nhân viên
                   </div>
                 </div>   
+                <!-- search text and selection -->
                 <div class="row search-form">
                   <div class="search-box" style="margin-right: 15px;">
                     <img src="../Resource/icon/search.png" width="16px" alt="">
                     <input class="" placeholder="Tìm kiếm theo Mã, Tên hoặc Số điện thoại"></input>
+                    <div class="clearBtn"><img height="13px" src="../Resource/icon/x.svg" alt=""></div>
                   </div>
                   
                   <select name="departments" id="departments" class="search-box" style="margin-right: 20px;">
@@ -97,97 +101,101 @@
                     <img src="../Resource/icon/refresh.png" alt="">
                   </div>
                 </div> 
-                <table class="table" style="margin-top: 15px;" id="mytable">
-                  <thead>
-                    <tr>
-                      <th scope="col">Mã nhân viên</th>
-                      <th scope="col">Họ và tên</th>
-                      <th scope="col">Giới tính</th>
-                      <th scope="col">Ngày sinh</th>
-                      <th scope="col">Điện thoại</th>
-                      <th scope="col">Email</th>
-                      <th scope="col">Chức vụ</th>
-                      <th scope="col">Phòng ban</th>
-                      <th scope="col">Mức lương cơ bản</th>
-                      <th scope="col">Tình trạng công việc</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>NV-532408</td>
-                      <td>Nguyễn Lan Anh</td>
-                      <td>Nữ</td>
-                      <td>19/09/2000</td>
-                      <td>0978122361</td>
-                      <td>lananha1k17@gmail.com</td>
-                      <td>Fresher</td>
-                      <td>Khối sản xuất</td>
-                      <td>100</td>
-                      <td>Đang học việc</td>
-                    </tr>
-                    <tr>
-                      <td>NV-532408</td>
-                      <td>Nguyễn Lan Anh</td>
-                      <td>Nữ</td>
-                      <td>19/09/2000</td>
-                      <td>0978122361</td>
-                      <td>lananha1k17@gmail.com</td>
-                      <td>Fresher</td>
-                      <td>Khối sản xuất</td>
-                      <td>100</td>
-                      <td>Đang học việc</td>
-                    </tr>
-                    <tr>
-                      <td>NV-532408</td>
-                      <td>Nguyễn Lan Anh</td>
-                      <td>Nữ</td>
-                      <td>19/09/2000</td>
-                      <td>0978122361</td>
-                      <td>lananha1k17@gmail.com</td>
-                      <td>Fresher</td>
-                      <td>Khối sản xuất</td>
-                      <td>100</td>
-                      <td>Đang học việc</td>
-                    </tr>
-                    <tr>
-                      <td>NV-532408</td>
-                      <td>Nguyễn Lan Anh</td>
-                      <td>Nữ</td>
-                      <td>19/09/2000</td>
-                      <td>0978122361</td>
-                      <td>lananha1k17@gmail.com</td>
-                      <td>Fresher</td>
-                      <td>Khối sản xuất</td>
-                      <td>100</td>
-                      <td>Đang học việc</td>
-                    </tr>
-                    <tr>
-                      <td>NV-532408</td>
-                      <td>Nguyễn Lan Anh</td>
-                      <td>Nữ</td>
-                      <td>19/09/2000</td>
-                      <td>0978122361</td>
-                      <td>lananha1k17@gmail.com</td>
-                      <td>Fresher</td>
-                      <td>Khối sản xuất</td>
-                      <td>100</td>
-                      <td>Đang học việc</td>
-                    </tr>
-                    <tr>
-                      <td>NV-532408</td>
-                      <td>Nguyễn Lan Anh</td>
-                      <td>Nữ</td>
-                      <td>19/09/2000</td>
-                      <td>0978122361</td>
-                      <td>lananha1k17@gmail.com</td>
-                      <td>Fresher</td>
-                      <td>Khối sản xuất</td>
-                      <td>100</td>
-                      <td>Đang học việc</td>
-                    </tr>
+                <!-- table show list employee  -->
+                <div class="table-container">
+                  <table class="table" style="margin-top: 15px;" id="mytable">
+                    <thead>
+                      <tr>
+                        <th scope="col">Mã nhân viên</th>
+                        <th scope="col">Họ và tên</th>
+                        <th scope="col">Giới tính</th>
+                        <th scope="col">Ngày sinh</th>
+                        <th scope="col">Điện thoại</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Chức vụ</th>
+                        <th scope="col">Phòng ban</th>
+                        <th scope="col">Mức lương cơ bản</th>
+                        <th scope="col">Tình trạng công việc</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>NV-532408</td>
+                        <td>Nguyễn Lan Anh</td>
+                        <td>Nữ</td>
+                        <td>19/09/2000</td>
+                        <td>0978122361</td>
+                        <td>lananha1k17@gmail.com</td>
+                        <td>Fresher</td>
+                        <td>Khối sản xuất</td>
+                        <td class="text-right">100</td>
+                        <td>Đang học việc</td>
+                      </tr>
+                      <tr>
+                        <td>NV-532408</td>
+                        <td>Nguyễn Lan Anh</td>
+                        <td>Nữ</td>
+                        <td>19/09/2000</td>
+                        <td>0978122361</td>
+                        <td>lananha1k17@gmail.com</td>
+                        <td>Fresher</td>
+                        <td>Khối sản xuất</td>
+                        <td class="text-right">100</td>
+                        <td>Đang học việc</td>
+                      </tr>
+                      <tr>
+                        <td>NV-532408</td>
+                        <td>Nguyễn Lan Anh</td>
+                        <td>Nữ</td>
+                        <td>19/09/2000</td>
+                        <td>0978122361</td>
+                        <td>lananha1k17@gmail.com</td>
+                        <td>Fresher</td>
+                        <td>Khối sản xuất</td>
+                        <td class="text-right">100</td>
+                        <td>Đang học việc</td>
+                      </tr>
+                      <tr>
+                        <td>NV-532408</td>
+                        <td>Nguyễn Lan Anh</td>
+                        <td>Nữ</td>
+                        <td>19/09/2000</td>
+                        <td>0978122361</td>
+                        <td>lananha1k17@gmail.com</td>
+                        <td>Fresher</td>
+                        <td>Khối sản xuất</td>
+                        <td class="text-right">100</td>
+                        <td>Đang học việc</td>
+                      </tr>
+                      <tr>
+                        <td>NV-532408</td>
+                        <td>Nguyễn Lan Anh</td>
+                        <td>Nữ</td>
+                        <td>19/09/2000</td>
+                        <td>0978122361</td>
+                        <td>lananha1k17@gmail.com</td>
+                        <td>Fresher</td>
+                        <td>Khối sản xuất</td>
+                        <td class="text-right">100</td>
+                        <td>Đang học việc</td>
+                      </tr>
+                      <tr>
+                        <td>NV-532408</td>
+                        <td>Nguyễn Lan Anh</td>
+                        <td>Nữ</td>
+                        <td>19/09/2000</td>
+                        <td>0978122361</td>
+                        <td>lananha1k17@gmail.com</td>
+                        <td>Fresher</td>
+                        <td>Khối sản xuất</td>
+                        <td class="text-right">100</td>
+                        <td>Đang học việc</td>
+                      </tr>
 
-                  </tbody>
-                </table>
+                    </tbody>
+                  </table>
+                </div>
+                <!-- paging  -->
                 <div class="pageable row">
                   <div class="showing">Hiển thị <span><b>1-10/10000</b></span> nhân viên</div>
                   <div class="page row">
@@ -229,14 +237,20 @@
               <div class="col-sm-6">
                 <div class="form-group">
                   <label for="maNV">Mã nhân viên (<span style="color: red;">*</span>)</label>
-                  <input type="text" name="maNV" id="maNV" class="form-control" placeholder="Mã nhân viên">
+                  <div class="search-box">
+                    <input type="text" name="maNV" id="maNV" class="form-input" placeholder="Mã nhân viên">
+                    <div class="clearBtn"><img height="13px" src="../Resource/icon/x.svg" alt=""></div>
+                  </div>                  
                 </div>
               </div>
               <div class="col-sm-6">
                 <div class="form-group">
                   <div class="form-group">
                     <label for="fullname">Họ và tên (<span style="color: red;">*</span>)</label>
-                    <input type="text" name="fullname" id="fullname" class="form-control" placeholder="Họ và tên">
+                    <div class="search-box">
+                      <input type="text" name="fullname" id="fullname" class="form-input" placeholder="Họ và tên">
+                      <div class="clearBtn"><img height="13px" src="../Resource/icon/x.svg" alt=""></div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -245,14 +259,17 @@
               <div class="col-sm-6">
                 <div class="form-group">
                   <label for="birthDate">Ngày sinh</label>
-                  <input type="date" name="birthDate" id="birthDate" class="form-control">
+                  <div class="search-box">
+                    <input type="date" name="birthDate" id="birthDate" class="form-input">
+                    <div class="clearBtn"><img height="13px" src="../Resource/icon/x.svg" alt=""></div>
+                  </div>
                 </div>
               </div>
               <div class="col-sm-6">
                 <div class="form-group">
                   <div class="form-group">
                     <label for="fullname">Giới tính</label>
-                    <select name="gender" id="gender" class="form-control">
+                    <select name="gender" id="gender" class="search-box">
                       <option value="nam">Nam</option>
                       <option value="Nữ">Nữ</option>
                       <option value="Other">Khác</option>
@@ -265,14 +282,18 @@
               <div class="col-sm-6">
                 <div class="form-group">
                   <label for="cmtnd">Số CMTND/ Căn cước (<span style="color: red;">*</span>)</label>
-                  <input type="number" name="cmtnd" id="cmtnd" class="form-control" placeholder="CNTND/ Căn cước">
+                  <div class="search-box">
+                    <input type="number" name="cmtnd" id="cmtnd" class="form-input" placeholder="CNTND/ Căn cước">
+                    <div class="clearBtn"><img height="13px" src="../Resource/icon/x.svg" alt=""></div>
+                  </div>
                 </div>
               </div>
               <div class="col-sm-6">
                 <div class="form-group">
                   <div class="form-group">
                     <label for="ngaycap">Ngày cấp</label>
-                    <input type="date" name="ngaycap" id="ngaycap" class="form-control">
+                    <div class="search-box">
+                      <input type="date" name="ngaycap" id="ngaycap" class="form-input"></div>
                   </div>
                 </div>
               </div>
@@ -281,7 +302,10 @@
               <div class="col-sm-6">
                 <div class="form-group">
                   <label for="noicap">Nơi cấp</label>
-                  <input type="text" name="noicap" id="noicap" class="form-control" placeholder="Nơi cấp">
+                  <div class="search-box">
+                    <input type="text" name="noicap" id="noicap" class="form-input" placeholder="Nơi cấp">
+                    <div class="clearBtn"><img height="13px" src="../Resource/icon/x.svg" alt=""></div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -289,14 +313,20 @@
               <div class="col-sm-6">
                 <div class="form-group">
                   <label for="email">Email (<span style="color: red;">*</span>)</label>
-                  <input type="text" name="email" id="email" class="form-control" placeholder="Email">
+                  <div class="search-box">
+                    <input type="text" name="email" id="email" class="form-input" placeholder="Email">
+                    <div class="clearBtn"><img height="13px" src="../Resource/icon/x.svg" alt=""></div>
+                  </div>
                 </div>
               </div>
               <div class="col-sm-6">
                 <div class="form-group">
                   <div class="form-group">
                     <label for="phoneNum">Số điện thoại (<span style="color: red;">*</span>)</label>
-                    <input type="number" name="phoneNum" id="phoneNum" class="form-control" placeholder="Số điện thoại">
+                    <div class="search-box">
+                      <input type="number" name="phoneNum" id="phoneNum" class="form-input" placeholder="Số điện thoại">
+                      <div class="clearBtn"><img height="13px" src="../Resource/icon/x.svg" alt=""></div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -306,7 +336,7 @@
               <div class="col-sm-6">
                 <div class="form-group">
                   <label for="position">Vị trí</label>
-                  <select name="position" id="position" class="form-control">
+                  <select name="position" id="position" class="search-box">
                     <option value="1">Giám đốc</option>
                     <option value="2">Nhân viên kinh doanh</option>
                     <option value="3">Lập trình viên</option>
@@ -317,7 +347,7 @@
                 <div class="form-group">
                   <div class="form-group">
                     <label for="department">Phòng ban</label>
-                    <select name="department" id="department" class="form-control">
+                    <select name="department" id="department" class="search-box">
                       <option value="1">Phòng nhân sự</option>
                       <option value="2">Phòng kinh doanh</option>
                       <option value="3">Phòng hành chính</option>
@@ -330,14 +360,20 @@
               <div class="col-sm-6">
                 <div class="form-group">
                   <label for="taxNumber">Mã số thuế cá nhân</label>
-                  <input type="number" name="taxNumber" id="taxNumber" class="form-control" placeholder="Mã số thuế cá nhân">
+                  <div class="search-box">
+                    <input type="number" name="taxNumber" id="taxNumber" class="form-input" placeholder="Mã số thuế cá nhân">
+                    <div class="clearBtn"><img height="13px" src="../Resource/icon/x.svg" alt=""></div>
+                  </div>
                 </div>
               </div>
               <div class="col-sm-6">
                 <div class="form-group">
                   <div class="form-group">
                     <label for="salary">Mức lương cơ bản</label>
-                    <input type="text" name="salary" id="salary" class="form-control" placeholder="Mức lương cơ bản">                    
+                    <div class="search-box">
+                      <input type="text" name="salary" id="salary" class="form-input" placeholder="Mức lương cơ bản">
+                      <span>(VNĐ)</span>
+                    </div>                                        
                   </div>
                 </div>
               </div>
@@ -346,14 +382,15 @@
               <div class="col-sm-6">
                 <div class="form-group">
                   <label for="joinDate">Ngày gia nhập công ty</label>
-                  <input type="date" name="joinDate" id="joinDate" class="form-control">
+                  <div class="search-box">
+                    <input type="date" name="joinDate" id="joinDate" class="form-input"></div>
                 </div>
               </div>
               <div class="col-sm-6">
                 <div class="form-group">
                   <div class="form-group">
                     <label for="state">Tình trạng công việc</label>
-                    <select name="state" id="state" class="form-control">
+                    <select name="state" id="state" class="search-box">
                       <option value="1">Đang làm việc</option>
                       <option value="2">Đang học việc</option>
                       <option value="3">Đã nghỉ việcs</option>
@@ -375,6 +412,7 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

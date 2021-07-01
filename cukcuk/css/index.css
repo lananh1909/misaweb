@@ -108,6 +108,7 @@
     top: 0;
     left: 0;
     width: 100%;
+    z-index: 4;
     background-color: #ffffff;
 }
 select.title2 {
@@ -137,6 +138,14 @@ select.title2:focus {
     cursor: pointer;
 }
 
+.button:hover{
+    background-color: #2FBE8E;
+}
+
+.button:active{
+    background-color: #01B075;
+}
+
 .button i {
     padding-right: 10px;
 }
@@ -151,15 +160,21 @@ select.title2:focus {
     height: 40px;
     border-radius: 4px;
     border: 1px solid #dbdeff;
+    padding-left: 16px;
+    position: relative;
 }
 
 .search-box input {
     border: none;
-    padding: 8px;
+    padding: 8px 8px 8px 0;
     width: 250px;
 }
 .search-box input:focus {
     outline: none;  
+}
+
+.search-box:focus-within {
+    border-color: #019160;
 }
 
 ::placeholder {
@@ -171,9 +186,6 @@ select.title2:focus {
 .search-box input:focus::-moz-placeholder   {color:transparent;}
 .search-box input:-moz-placeholder   {color:transparent;}
 
-.search-box img {
-    margin-left: 16px;
-}
 .refresh {
     height: 40px;
     border-radius: 4px;
@@ -191,10 +203,10 @@ select.title2:focus {
     margin-right: 0 !important;
     align-items: center;
 }
-.table {
+
+.table-container {
+    height: 750px;
     overflow: scroll;
-    height: 100%;
-    width: 100%;
 }
 
 /* paging css */
@@ -238,6 +250,7 @@ select.title2:focus {
     color: #ffffff;
     background-color: #BBBBBB;
     padding: 0 5px;
+    border-radius: 4px 0 0 4px;
 }
 
 .hide {
@@ -253,6 +266,10 @@ select.title2:focus {
 }
 
 /* modal css */
+#closeBtn {
+    margin-top: 5px;
+    margin-right: 5px;
+}
 .mymodal{
     display: none;
     position: fixed;
@@ -295,10 +312,40 @@ select.title2:focus {
 label {
     margin-bottom: 4px !important;
 }
+/* input field css  */
 .form-group {
     margin-bottom: 16px !important;
 }
 
+.form-group > .search-box {
+    display: block;
+    width: 100%;
+}
+
+.form-input {
+    border: none;
+    width: 100% !important;
+}
+.form-input:focus {
+    outline: none;
+}
+.search-box .clearBtn {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    cursor: pointer;
+    display: none;
+}
+.form-group .search-box span {
+    font-style: italic;
+    opacity: 0.8;
+    position: absolute;
+    right: 8px;
+    top: 8px;
+}
+.form-control:focus-within{
+    border-color: #019160 !important;
+}
 .main-label {
     margin-bottom: 24px;
 }
