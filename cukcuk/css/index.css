@@ -84,9 +84,9 @@
 }
 
 .active {
-    background-color: #019160;
-    color: #ffffff;
-    font-family: medium;
+    background-color: #019160 !important;
+    color: #ffffff !important;
+    font-family: medium !important;
 }
 .icon {
     font-size: 20px;
@@ -96,9 +96,10 @@
 /* css right content  */
 .right-content{
     margin-left: 200px;
-    width: 100%;   
+    width: calc(100% - 200px);   
     transition: 1s; 
 }
+
 .top-right {
     padding-top: 12px;
     padding-bottom: 12px;
@@ -182,9 +183,7 @@ select.title2:focus {
     opacity: 1; /* Firefox */
     font-size: 12px;
 }
-.search-box input:focus::-webkit-input-placeholder  {color:transparent;}
-.search-box input:focus::-moz-placeholder   {color:transparent;}
-.search-box input:-moz-placeholder   {color:transparent;}
+.search-box input:focus::placeholder  {color:transparent;}
 
 .refresh {
     height: 40px;
@@ -206,7 +205,28 @@ select.title2:focus {
 
 .table-container {
     height: 750px;
+    width: 100%;
     overflow: scroll;
+}
+table {
+    background-color: #ffffff;
+    overflow: scroll;
+}
+.table td,th {
+    padding: 10px 16px !important;
+    border-bottom: 1px solid #bbbbbb !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+tr:hover {
+    background-color: #e5e5e5 !important;
+}
+
+tr:nth-child(odd) {background-color: #E9EBEE;}
+th{
+    background-color: #ffffff;
 }
 
 /* paging css */
@@ -235,7 +255,6 @@ select.title2:focus {
 .pageNum:hover , .changePage:hover {
     background-color: #ffffff;
     color: #000000;
-    border-color: transparent;
 }
 
 .changePage {
@@ -263,6 +282,7 @@ select.title2:focus {
 
 .changeMargin {
     margin-left: 52px !important;
+    width: calc(100% - 52px);
 }
 
 /* modal css */
